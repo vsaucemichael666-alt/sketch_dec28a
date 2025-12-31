@@ -6,7 +6,6 @@ void setup()
 pinMode(trig, OUTPUT);
 pinMode(echo, INPUT);
 pinMode(buzzer, OUTPUT);
-Serial.begin(9600);
 }
 
 void loop()
@@ -24,20 +23,20 @@ delay(100);
   if (dist >= 20) {
     tone(buzzer, 100);
   }
-  if (dist < 20 && dist >= 10) {
+  else if (dist < 20 && dist >= 10) {
     tone(buzzer, 500);
     delay(100);
     noTone(buzzer);
     delay(100);
   }
-  if (dist < 10) {
+  else if (dist < 10) {
     tone(buzzer, 1000);
     delay(50);
     noTone(buzzer);
     delay(50);
  
   }
-  if (dist > 25) {
+  else if (dist > 25) {
     noTone(buzzer);
   }
 }
